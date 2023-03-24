@@ -1,0 +1,58 @@
+import React from "react";
+
+// comp
+import { Box, Stack, Typography } from "@mui/material";
+import { categories } from "@/utils/constants";
+
+type Props = {
+  name: string;
+  icon: JSX.Element;
+};
+
+type PropsPage = {
+  selectedCategory: string;
+  setSelectedCategory: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const Sidebar = ({ selectedCategory, setSelectedCategory }: PropsPage) => {
+  return (
+    <Stack
+      direction="row"
+      sx={{
+        overflowY: "auto",
+        height: { sx: "auto", md: "95%" },
+        flexDirection: { md: "column" },
+      }}
+    >
+      {categories.map((category: Props) => (
+        <button
+          className="category-btn"
+          style={{
+            background: category.name === selectedCategory ? "#FC1503" : "",
+            color: "white",
+          }}
+          onClick={() => setSelectedCategory(category.name)}
+        >
+          <span
+            style={{
+              color: category.name === selectedCategory ? "white" : "red",
+              marginRight: 15,
+            }}
+          >
+            {category.icon}
+          </span>
+          <span
+            style={{
+              opacity: category.name === selectedCategory ? 1 : 0.5,
+              marginRight: 15,
+            }}
+          >
+            {category.name}
+          </span>
+        </button>
+      ))}
+    </Stack>
+  );
+};
+
+export default Sidebar;
