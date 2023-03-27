@@ -1,18 +1,15 @@
 import Head from "next/head";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 
 // comp
 import { Box, Stack, Typography } from "@mui/material";
 import { SideBar, Videos } from "@/components";
+
+// utils
 import { fetchFromAPI } from "@/utils/fetchFromAPI";
 
-type Video = {
-  id: {
-    videoId: string;
-    channelId: string;
-  };
-};
+// interfaces
+import { Video, VideosSchema } from "@/typings";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("New");
@@ -20,7 +17,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
-      .then((videos) => setVideos(videos))
+      .then((videos: VideosSchema) => setVideos(videos.items))
       .catch((err) => alert(err.message));
   }, [selectedCategory]);
 
