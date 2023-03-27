@@ -3,10 +3,24 @@ import React, { useState } from "react";
 // comp
 import { Paper, IconButton } from "@mui/material";
 import { Search } from "@mui/icons-material";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
 const Searchbar = (props: Props) => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
+    e.preventDefault();
+
+    if (searchTerm) {
+      router.push(`/search/${searchTerm}`);
+
+      setSearchTerm("");
+    }
+  };
+
   return (
     <Paper
       component="form"
@@ -23,11 +37,15 @@ const Searchbar = (props: Props) => {
         type="text"
         className="search-bar"
         placeholder="Search..."
-        value={""}
-        onChange={() => {}}
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
 
-      <IconButton type="submit" sx={{ p: "10px", color: "red" }}>
+      <IconButton
+        type="submit"
+        sx={{ p: "10px", color: "red" }}
+        onClick={handleSubmit}
+      >
         <Search />
       </IconButton>
     </Paper>

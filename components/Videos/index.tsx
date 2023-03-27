@@ -15,7 +15,7 @@ const Videos = ({ videos }: Props) => {
   return (
     <Stack direction="row" flexWrap="wrap" justifyContent="start" alignItems="start" gap={2}>
       {videos.map((video: Video, index) => (
-        <Box key={index}>
+        <Box key={video.snippet.title}>
           {video.id.videoId && <VideoCard video={video} />}
           {video.id.channelId && <ChannelCard channelDetail={video} />}
         </Box>
