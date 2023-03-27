@@ -15,6 +15,9 @@ export interface Video {
     channelId?: string;
   };
   snippet: VideoSnippet;
+  statistics: {
+    subscriberCount: Number;
+  };
 }
 
 export interface VideoSnippet {

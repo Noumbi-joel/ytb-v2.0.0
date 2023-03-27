@@ -14,12 +14,25 @@ import { demoProfilePicture } from "@/utils/constants";
 import Link from "next/link";
 
 type Props = {
-  channelDetail: Video;
+  channelDetail: Video | undefined;
+  mt?: string;
 };
 
-const ChannelCard = ({ channelDetail }: Props) => {
+const ChannelCard = ({ channelDetail, mt }: Props) => {
   return (
-    <Box sx={{ boxShadow: "none", borderRadius: "20px" }}>
+    <Box
+      sx={{
+        boxShadow: "none",
+        borderRadius: "20px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: { xs: "356px", md: "320px" },
+        height: "326px",
+        marginTop: mt ? mt : 0,
+        marginX: "auto",
+      }}
+    >
       <Link href={`/channel/${channelDetail?.snippet?.channelId}`}>
         <CardContent
           sx={{
@@ -44,8 +57,18 @@ const ChannelCard = ({ channelDetail }: Props) => {
             }}
           />
 
-          <Typography variant="h6">{channelDetail?.snippet?.title}</Typography>
-          <CheckCircle sx={{ fontSize: 12, color: "gray", ml: "5px" }} />
+          <Typography variant="h6">
+            {channelDetail?.snippet?.title}{" "}
+            <CheckCircle sx={{ fontSize: 12, color: "gray", ml: "5px" }} />
+          </Typography>
+          {channelDetail?.statistics?.subscriberCount && (
+            <Typography>
+              {parseInt(
+                channelDetail?.statistics?.subscriberCount
+              ).toLocaleString()}{" "}
+              Subscribers
+            </Typography>
+          )}
         </CardContent>
       </Link>
     </Box>
