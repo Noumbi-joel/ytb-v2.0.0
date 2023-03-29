@@ -16,7 +16,7 @@ export interface Video {
   };
   snippet: VideoSnippet;
   statistics: {
-    subscriberCount: Number;
+    subscriberCount: string;
   };
 }
 

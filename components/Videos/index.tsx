@@ -9,7 +9,7 @@ import { Video } from "@/typings";
 
 type Props = {
   videos: Video[];
-  direction?: string;
+  direction?: boolean;
 };
 
 const Videos = ({ videos, direction }: Props) => {
@@ -17,9 +17,9 @@ const Videos = ({ videos, direction }: Props) => {
 
   return (
     <Stack
-      direction={direction || "row"}
+      direction={direction ? "column" : "row"}
       flexWrap="wrap"
-      justifyContent={{ md: "start", xs: "center" }}
+      justifyContent="start"
       alignItems="start"
       gap={2}
     >

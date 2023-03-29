@@ -109,7 +109,7 @@ export default function VideoDetails() {
             alignItems="center"
             justifyContent="center"
           >
-            <Videos videos={videos} direction="column" />
+            <Videos videos={videos} direction />
           </Box>
         </Stack>
       </Box>

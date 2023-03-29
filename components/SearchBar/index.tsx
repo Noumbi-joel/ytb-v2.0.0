@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { MouseEvent, useState } from "react";
 
 // comp
 import { Paper, IconButton } from "@mui/material";
@@ -11,7 +11,7 @@ const Searchbar = (props: Props) => {
   const [searchTerm, setSearchTerm] = useState("");
   const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
     e.preventDefault();
 
     if (searchTerm) {
