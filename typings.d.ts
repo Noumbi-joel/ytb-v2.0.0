@@ -26,6 +26,7 @@ export interface VideoSnippet {
   description: string;
   title: string;
   thumbnails: Thumbnails;
+  title?: string;
 }
 
 export interface Thumbnails {
@@ -43,5 +44,24 @@ export interface Thumbnails {
     height: number;
     url: string;
     width: number;
+  };
+}
+
+export interface FootageSchema {
+  items: Footage[];
+  kind: string;
+  pageInfo: {
+    resultsPerPage: number;
+    totalResults: number;
+  };
+}
+
+export interface Footage {
+  contentDetails: Object;
+  id: string;
+  snippet: VideoSnippet;
+  statistics: {
+    likeCount: string;
+    viewCount: string;
   };
 }

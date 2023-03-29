@@ -22,6 +22,7 @@ const NavBar = (props: Props) => {
         background: "#000",
         top: 0,
         justifyContent: "space-between",
+        zIndex: 99,
       }}
     >
       <img

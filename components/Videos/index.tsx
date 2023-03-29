@@ -1,7 +1,7 @@
 import React from "react";
 
 // comp
-import { Stack, Box } from "@mui/material";
+import { Stack, Box, Typography } from "@mui/material";
 import { VideoCard, ChannelCard } from "..";
 
 // interfaces
@@ -9,13 +9,22 @@ import { Video } from "@/typings";
 
 type Props = {
   videos: Video[];
+  direction?: string;
 };
 
-const Videos = ({ videos }: Props) => {
+const Videos = ({ videos, direction }: Props) => {
+  if (!videos.length) return <Typography variant="h4">Loading...</Typography>;
+
   return (
-    <Stack direction="row" flexWrap="wrap" justifyContent="start" alignItems="start" gap={2}>
-      {videos.map((video: Video, index) => (
-        <Box key={video.snippet.title}>
+    <Stack
+      direction={direction || "row"}
+      flexWrap="wrap"
+      justifyContent={{ md: "start", xs: "center" }}
+      alignItems="start"
+      gap={2}
+    >
+      {videos?.map((video: Video, index) => (
+        <Box key={index}>
           {video.id.videoId && <VideoCard video={video} />}
           {video.id.channelId && <ChannelCard channelDetail={video} />}
         </Box>

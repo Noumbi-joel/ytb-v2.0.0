@@ -24,7 +24,7 @@ const Sidebar = ({ selectedCategory, setSelectedCategory }: PropsPage) => {
         flexDirection: { md: "column" },
       }}
     >
-      {categories.map((category: Props) => (
+      {categories?.map((category: Props) => (
         <button
           className="category-btn"
           style={{
