@@ -1,38 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Project Title
+Youtube - clone v1.0.0
+## Project Description
+* This is a v1 of youtube clone in which you can see youtube videos by categories or search videos by **alias or chip or term**, see a page description of a youtube channel and the corresponding videos, finally read your favorite youtube videos via **video player** with **controls**.
+* My challenge during the building of this app was to be able to use correctly the **react player library**.
+* So basically **react player** is a React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, DailyMotion and Kaltura.
+## How to Use
+* You just go to: https://next-youtube-nkjy.vercel.app/ and use the version 1 of the app. 
+* The particularity is easy to guess **ease of use**.
+## Screenshots
+![photo_2023-03-30_17-28-38](https://user-images.githubusercontent.com/62994009/228903379-3552a63f-7d1c-493f-9fdd-ce7436798335.jpg)
+![photo_2023-03-30_17-28-40](https://user-images.githubusercontent.com/62994009/228903399-3f285e52-63c7-48e6-9196-296595c812ec.jpg)
+![photo_2023-03-30_17-28-42](https://user-images.githubusercontent.com/62994009/228903420-0ae4c5af-0617-4248-9c37-25472ca8699e.jpg)
+![photo_2023-03-30_17-28-43](https://user-images.githubusercontent.com/62994009/228903436-bfb97e0e-6a4d-4896-86ad-956cc6eba084.jpg)
+![photo_2023-03-30_17-28-44](https://user-images.githubusercontent.com/62994009/228903456-23275cd7-f509-41a1-87ae-885a2b1ee596.jpg)
+## Thanking
+https://rapidapi.com/user/ytdlfree
